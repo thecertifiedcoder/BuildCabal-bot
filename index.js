@@ -244,7 +244,7 @@ async function startGodszealBotInc() {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363269950668068@newsletter',
-                        newsletterName: '❦ ════ •⊰❂ AI TOOLS HUB  ❂⊱• ════ ❦',
+                        newsletterName: 'BuildCabal Bot',
                         serverMessageId: -1
                     }
                 }
@@ -253,10 +253,9 @@ async function startGodszealBotInc() {
             await delay(1999)
             console.log(chalk.yellow(`\n\n                  ${chalk.bold.blue(`[ ${global.botname || '𝐆𝐎𝐃𝐒𝐙𝐄𝐀𝐋 𝐗𝐌𝐃'} ]`)}\n\n`))
             console.log(chalk.cyan(`< ================================================== >`))
-            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: AiOFLautech`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: AiOfLautech`))
+            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: BuildCabal`))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: BuildCabal`))
             console.log(chalk.magenta(`${global.themeemoji || '•'} WA NUMBER: ${owner}`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: Godszeal Tech`))
             console.log(chalk.green(`${global.themeemoji || '•'} 🤖 Bot Connected Successfully! ✅`))
         }
         if (
