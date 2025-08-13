@@ -69,10 +69,10 @@ const store = {
     }
 }
 
-let phoneNumber = "2348089336992"
+let phoneNumber = "2349151627535"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
-global.botname = "𝐆𝐎𝐃𝐒𝐙𝐄𝐀𝐋 𝐗𝐌𝐃"
+global.botname = "BuildCabal Bot"
 global.themeemoji = "•"
 
 const settings = require('./settings')
@@ -144,7 +144,7 @@ async function startGodszealBotInc() {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363269950668068@newsletter',
-                                newsletterName: '❦ ════ •⊰❂ AI TOOLS HUB  ❂⊱• ════ ❦',
+                                newsletterName: 'BuildCabal New Letter',
                                 serverMessageId: -1
                             }
                         }
