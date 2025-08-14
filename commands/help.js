@@ -179,8 +179,8 @@ Join our channel for updates:`;
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363269950668068@newsletter',
-                        newsletterName: '❦ ════ •⊰❂ AI TOOLS HUB  ❂⊱• ════ ❦',
+                        newsletterJid: '120363409336590694@newsletter',
+                        newsletterName: 'BuildCabal Bot Channel Channel',
                         serverMessageId: -1
                     }
                 }
@@ -193,8 +193,8 @@ Join our channel for updates:`;
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363269950668068@newsletter',
-                        newsletterName: '❦ ════ •⊰❂ AI TOOLS HUB  ❂⊱• ════ ❦',
+                        newsletterJid: '120363409336590694@newsletter',
+                        newsletterName: 'BuildCabal Bot Channel Channel',
                         serverMessageId: -1
                     } 
                 }

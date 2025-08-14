@@ -54,7 +54,7 @@ async function updateCommand(sock, chatId, message) {
         const getUpdateInfo = async () => {
             try {
                 const response = await axios.get(
-                    'https://api.github.com/repos/AiOfLautech/God-s-Zeal-Xmd/commits?per_page=1'
+                    'https://api.github.com/repos/thecertifiedcoder/BuildCabal-Bot/commits?per_page=1'
                 );
                 
                 if (response.data && response.data[0]) {

@@ -72,7 +72,7 @@ const store = {
 let phoneNumber = "2349151627535"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
-global.botname = "BuildCabal Bot"
+global.botname = "BuildCabal Bot Channel"
 global.themeemoji = "•"
 
 const settings = require('./settings')
@@ -143,8 +143,8 @@ async function startGodszealBotInc() {
                             forwardingScore: 1,
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363269950668068@newsletter',
-                                newsletterName: 'BuildCabal New Letter',
+                                newsletterJid: '120363409336590694@newsletter',
+                                newsletterName: 'BuildCabal Bot Channel Channel',
                                 serverMessageId: -1
                             }
                         }
@@ -243,8 +243,8 @@ async function startGodszealBotInc() {
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363269950668068@newsletter',
-                        newsletterName: 'BuildCabal Bot',
+                        newsletterJid: '120363409336590694@newsletter',
+                        newsletterName: 'BuildCabal Bot Channel Channel',
                         serverMessageId: -1
                     }
                 }

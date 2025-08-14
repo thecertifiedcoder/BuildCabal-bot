@@ -100,7 +100,7 @@ const pairCommand = require('./commands/pair');
 global.packname = settings.packname;
 global.author = settings.author;
 global.channelLink = "https://whatsapp.com/channel/0029VaXKAEoKmCPS6Jz7sw0N";
-global.ytch = "AiOFLautech";
+global.ytch = "BuildCabal_bot";
 
 // Add this near the top of main.js with other global configurations
 const channelInfo = {
@@ -108,8 +108,8 @@ const channelInfo = {
         forwardingScore: 1,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363269950668068@newsletter',
-            newsletterName: '❦ ════ •⊰❂ AI TOOLS HUB  ❂⊱• ════ ❦',
+            newsletterJid: '120363409336590694@newsletter',
+            newsletterName: 'BuildCabal Bot Channel Channel',
             serverMessageId: -1
         }
     }
@@ -750,7 +750,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 const ssCommandLength = userMessage.startsWith('.screenshot') ? 11 : (userMessage.startsWith('.ssweb') ? 6 : 3);
                 await handleSsCommand(sock, chatId, message, userMessage.slice(ssCommandLength).trim());
                 break;
-            case userMessage.startsWith('.update') || userMessage.startWith('.upd') || userMessage.startWith('.upt'):
+            case userMessage.startsWith('.update') || userMessage.startsWith('.upd') || userMessage.startsWith('.upt'):
                 await updateCommand(sock, chatId, message);
                 break;
             case userMessage.startsWith('.areact') || userMessage.startsWith('.autoreact') || userMessage.startsWith('.autoreaction'):
@@ -772,23 +772,6 @@ async function handleMessages(sock, messageUpdate, printLog) {
             case userMessage === '.jid':
                 await groupJidCommand(sock, chatId, message);
                 break;
-
-                // Function to handle .groupjid command
-                async function groupJidCommand(sock, chatId, message) {
-                    const groupJid = message.key.remoteJid;
-
-                    if (!groupJid.endsWith('@g.us')) {
-                        return await sock.sendMessage(chatId, {
-                            text: "❌ This command can only be used in a group."
-                        });
-                    }
-
-                    await sock.sendMessage(chatId, {
-                        text: `✅ Group JID: ${groupJid}`
-                    }, {
-                        quoted: message
-                    });
-                }
 
             default:
                 if (isGroup) {
@@ -852,7 +835,7 @@ async function handleGroupParticipantUpdate(sock, update) {
             const data = JSON.parse(fs.readFileSync('./data/userGroupData.json'));
             const welcomeData = data.welcome[id];
             const welcomeMessage = welcomeData?.message || 'Welcome {user} to the group! 🎉';
-            const channelId = welcomeData?.channelId || '120363161513685998@newsletter';
+            const channelId = welcomeData?.channelId || '120363409336590694@newsletter';
 
             // Send welcome message for each new participant
             for (const participant of participants) {
@@ -870,7 +853,7 @@ async function handleGroupParticipantUpdate(sock, update) {
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: channelId,
-                            newsletterName: 'KnightBot MD',
+                            newsletterName: 'BuildCabal Bot Channel Channel',
                             serverMessageId: -1
                         }
                     }
@@ -892,7 +875,7 @@ async function handleGroupParticipantUpdate(sock, update) {
             const data = JSON.parse(fs.readFileSync('./data/userGroupData.json'));
             const goodbyeData = data.goodbye[id];
             const goodbyeMessage = goodbyeData?.message || 'Goodbye {user} 👋';
-            const channelId = goodbyeData?.channelId || '120363161513685998@newsletter';
+            const channelId = goodbyeData?.channelId || '120363409336590694@newsletter';
 
             // Send goodbye message for each leaving participant
             for (const participant of participants) {
@@ -918,6 +901,38 @@ async function handleGroupParticipantUpdate(sock, update) {
         }
     } catch (error) {
         console.error('Error in handleGroupParticipantUpdate:', error);
+    }
+}
+
+// Function to handle .jid command
+async function groupJidCommand(sock, chatId, message) {
+    try {
+        const groupJid = message.key.remoteJid;
+        const isGroup = groupJid.endsWith('@g.us');
+        const isPrivate = groupJid.endsWith('@s.whatsapp.net');
+
+        if (isGroup) {
+            await sock.sendMessage(chatId, {
+                text: `✅ *Group JID:* \`${groupJid}\`\n\n📱 *Group Type:* WhatsApp Group`,
+                ...channelInfo
+            });
+        } else if (isPrivate) {
+            await sock.sendMessage(chatId, {
+                text: `✅ *Private Chat JID:* \`${groupJid}\`\n\n📱 *Chat Type:* Private Message`,
+                ...channelInfo
+            });
+        } else {
+            await sock.sendMessage(chatId, {
+                text: `✅ *Chat JID:* \`${groupJid}\`\n\n📱 *Chat Type:* ${groupJid.includes('@newsletter') ? 'Newsletter/Channel' : 'Unknown'}`,
+                ...channelInfo
+            });
+        }
+    } catch (error) {
+        console.error('Error in groupJidCommand:', error);
+        await sock.sendMessage(chatId, {
+            text: '❌ Failed to get JID information!',
+            ...channelInfo
+        });
     }
 }
 
